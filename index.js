@@ -1,6 +1,6 @@
-const fs = reuiqre('fs;')
+var glob = require('glob');
 
-const FindDeps = (modules, images) => () => {
+const StaticGlobPlugin = () => () => {
   return {
     visitor: {
       CallExpression(x) {
@@ -10,10 +10,17 @@ const FindDeps = (modules, images) => () => {
         if (name !== '__glob')
           return;
 
-        console.log(arg0);
+        const files = glob.sync(arg0.value)
+          .map(file => `'${file}'`)
+          .join(',');
+
+        x.replaceWithSourceString(`
+[
+${files}
+]`);
       }
     }
   };
 };
 
-module.exports = FindDeps;
+module.exports = StaticGlobPlugin;

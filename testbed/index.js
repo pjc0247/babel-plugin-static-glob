@@ -2,7 +2,7 @@ const babel = require('@babel/core');
 const staticGlob = require('../index');
 
 const before = `
-__glob('*/*').map(x => console.log(x));
+__glob('**/*').map(x => console.log(x));
 `;
 const after = babel.transformSync(
   before,
