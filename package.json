@@ -1,4 +1,6 @@
 {
+  "name": "babel-plugin-static-glob",
+  "version": "0.1.0",
   "scripts": {
     "test": "node testbed/index.js"
   },

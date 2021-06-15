@@ -1,6 +1,15 @@
 babel-plugin-static-glob
 ====
 
+Installation
+----
+```
+yarn add babel-plugin-static-glob
+```
+
+Usage
+----
+
 ```tsx
 __glob('**/*.js').map(x => console.log(x));
 ```
