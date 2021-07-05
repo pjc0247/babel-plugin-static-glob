@@ -24,3 +24,7 @@ will be transpiled into:
   './src/page/LoginPage.js',
 ].map(x => console.log(x));
 ```
+
+Glob Patterns & Options
+----
+https://github.com/isaacs/node-glob
