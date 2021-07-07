@@ -1,4 +1,4 @@
-var glob = require('glob');
+const glob = require('glob');
 
 const StaticGlobPlugin = () => () => {
   return {
