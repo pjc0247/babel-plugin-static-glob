@@ -1,6 +1,6 @@
-const glob = require('glob');
+var glob = require('glob');
 
-const StaticGlobPlugin = () => () => {
+const StaticGlobPlugin = () => {
   return {
     visitor: {
       CallExpression(x) {
@@ -23,4 +23,4 @@ ${files}
   };
 };
 
-module.exports = StaticGlobPlugin;
+exports.default = StaticGlobPlugin;
